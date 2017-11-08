@@ -1,11 +1,16 @@
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-.idea
+.idea/*
+*.iml
+target
 
 # User-specific stuff:
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
+
+# Mac
+.DS_Store
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
@@ -59,3 +64,78 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+.idea/
+project/project/target/config-classes/$fdbb0624c597ad9ab33c$$anonfun$$sbtdef$1.class
+project/project/target/config-classes/$fdbb0624c597ad9ab33c$.class
+project/project/target/config-classes/$fdbb0624c597ad9ab33c.cache
+project/project/target/config-classes/$fdbb0624c597ad9ab33c.class
+project/target/config-classes/$3970f35a615d98417a0b$$anonfun$$sbtdef$1.class
+project/target/config-classes/$3970f35a615d98417a0b$.class
+project/target/config-classes/$3970f35a615d98417a0b.cache
+project/target/config-classes/$3970f35a615d98417a0b.class
+project/target/config-classes/$43f3c96edad2236591fa$$anonfun$$sbtdef$1.class
+project/target/config-classes/$43f3c96edad2236591fa$.class
+project/target/config-classes/$43f3c96edad2236591fa.cache
+project/target/config-classes/$43f3c96edad2236591fa.class
+project/target/config-classes/$96e92bc4922c8b360c97$$anonfun$$sbtdef$1.class
+project/target/config-classes/$96e92bc4922c8b360c97$.class
+project/target/config-classes/$96e92bc4922c8b360c97.cache
+project/target/config-classes/$96e92bc4922c8b360c97.class
+project/target/config-classes/$c0cfc8480aa8eae259aa$$anonfun$$sbtdef$1$$anonfun$apply$1.class
+project/target/config-classes/$c0cfc8480aa8eae259aa$$anonfun$$sbtdef$1.class
+project/target/config-classes/$c0cfc8480aa8eae259aa$$anonfun$$sbtdef$2.class
+project/target/config-classes/$c0cfc8480aa8eae259aa$$anonfun$$sbtdef$3.class
+project/target/config-classes/$c0cfc8480aa8eae259aa$.class
+project/target/config-classes/$c0cfc8480aa8eae259aa.cache
+project/target/config-classes/$c0cfc8480aa8eae259aa.class
+project/target/resolution-cache/default/courseraucladatastructures-build/
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-compile-internal.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-compile.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-docs.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-optional.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-plugin.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-pom.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-provided.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-runtime-internal.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-runtime.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-scala-tool.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-sources.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-test-internal.xml
+project/target/resolution-cache/reports/default-courseraucladatastructures-build-test.xml
+project/target/scala-2.10/
+project/target/streams/compile/incCompileSetup/
+target/resolution-cache/courseraucladsa/
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-compile-internal.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-compile.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-docs.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-optional.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-plugin.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-pom.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-provided.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-runtime-internal.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-runtime.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-scala-tool.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-sources.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-test-internal.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa$sources_2.12-test.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-compile-internal.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-compile.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-docs.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-optional.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-plugin.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-pom.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-provided.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-runtime-internal.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-runtime.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-scala-tool.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-sources.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-test-internal.xml
+target/resolution-cache/reports/courseraucladsa-courseraucladsa_2.12-test.xml
+target/scala-2.12/classes.bak/
+target/streams/$global/$global/
+target/streams/$global/console/
+target/streams/compile/compile/
+target/streams/compile/compileIncremental/
+target/streams/compile/dependencyClasspath/
+target/streams/compile/incCompileSetup/
+target/streams/compile/internalDependencyClasspath/
