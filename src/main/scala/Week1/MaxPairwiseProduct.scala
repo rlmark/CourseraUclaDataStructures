@@ -22,7 +22,7 @@ object MaxPairwiseProduct {
   }
 
   // Cheating with scala types
-  def getMaxPairwiseProduct2(numbers: Array[Long]): Long = {
+  def getMaxPairwiseProduct2(numbers: Array[Int]): Long = {
     val numbersWithIndex = numbers.zipWithIndex
 
     var currentMaxIndex: Long = -1
@@ -42,7 +42,7 @@ object MaxPairwiseProduct {
     currentMax * secondMax
   }
 
-  def getMaxPairwiseProduct2(numbers: Array[Long]): Long = {
+  def getMaxPairwiseProduct3(numbers: Array[Int]): Long = {
     var currentMax: Long = -1
     var currentMaxIndex: Long = -1
 
@@ -64,11 +64,11 @@ object MaxPairwiseProduct {
   }
 
 
-    // Java shit that intelliJ wrote
+    // Java shit that intelliJ translated
   def main(args: Array[String]) {
     val scanner: MaxPairwiseProduct.FastScanner = new MaxPairwiseProduct.FastScanner(System.in)
     val n: Int = scanner.nextInt
-    val numbers: Array[Int] = new Array[Int](n)
+    val numbers: Array[Int] = Array[Int](n)
     {
       var i: Int = 0
       while (i < n) {
@@ -77,7 +77,7 @@ object MaxPairwiseProduct {
           i - 1
       }
     }
-    System.out.println(getMaxPairwiseProduct1(numbers))
+    System.out.println(getMaxPairwiseProduct2(numbers))
   }
 
   class FastScanner {
