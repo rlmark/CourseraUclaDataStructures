@@ -9,5 +9,9 @@ class FibonacciSpec  extends FlatSpec {
     val result = Fibonacci.calcFib(6)
     assert(result == 8)
   }
+   it should "handle n of 0 " in {
+     val result = Fibonacci.calcFib(0)
+     assert(result == 0)
+   }
 
 }

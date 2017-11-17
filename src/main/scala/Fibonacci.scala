@@ -10,11 +10,15 @@ object Fibonacci {
 
   def calcFib(n: Int): Int = {
     def loop(l: Int, r: Int): Int = {
-      if(r >= n){r}
+      if (r >= n) {
+        r
+      }
       else loop(r, l + r)
     }
-    loop(0, 1)
 
+if (n == 0) 0 else {
+  loop(0, 1)
+}
   }
   def main(args: Array[String]): Unit = {
     val s = new Scanner(System.in)
