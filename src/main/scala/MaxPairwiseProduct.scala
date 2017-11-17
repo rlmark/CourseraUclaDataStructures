@@ -44,7 +44,7 @@ object MaxPairwiseProduct {
     var currentMax: Long = -1
     var currentMaxIndex: Long = -1
 
-    for(i <- 0 until numbers.length){
+    for(i <- numbers.indices){
       if(numbers(i) > currentMax){
         currentMax = numbers(i)
         currentMaxIndex = i
@@ -52,7 +52,7 @@ object MaxPairwiseProduct {
     }
 
     var secondGreatest: Long = -1
-    for(i <- 0 until numbers.length){
+    for(i <- numbers.indices){
       if(numbers(i) > secondGreatest && i != currentMaxIndex){
         secondGreatest = numbers(i)
       }
@@ -72,10 +72,9 @@ object MaxPairwiseProduct {
       numbers :+= y
       i += 1
     }
-    numbers.foreach(System.out.println)
-
     System.out.println(getMaxPairwiseProduct2(numbers))
   }
+
 
   class FastScanner {
     var br: BufferedReader = null
