@@ -1,5 +1,3 @@
-package Week1
-
 import java.util._
 import java.io._
 
@@ -21,7 +19,7 @@ object MaxPairwiseProduct {
     result
   }
 
-  // Cheating with scala types
+  // with scala types
   def getMaxPairwiseProduct2(numbers: Array[Int]): Long = {
     val numbersWithIndex = numbers.zipWithIndex
 
@@ -36,8 +34,8 @@ object MaxPairwiseProduct {
 
     var secondMax: Long = -1
     numbersWithIndex.foreach{ case(n, index) =>
-        if(n > secondMax && index != currentMaxIndex)
-          secondMax = n
+      if(n > secondMax && index != currentMaxIndex)
+        secondMax = n
     }
     currentMax * secondMax
   }
@@ -46,7 +44,7 @@ object MaxPairwiseProduct {
     var currentMax: Long = -1
     var currentMaxIndex: Long = -1
 
-    for(i <- 0 to numbers.length){
+    for(i <- 0 until numbers.length){
       if(numbers(i) > currentMax){
         currentMax = numbers(i)
         currentMaxIndex = i
@@ -54,7 +52,7 @@ object MaxPairwiseProduct {
     }
 
     var secondGreatest: Long = -1
-    for(i <- 0 to numbers.length){
+    for(i <- 0 until numbers.length){
       if(numbers(i) > secondGreatest && i != currentMaxIndex){
         secondGreatest = numbers(i)
       }
@@ -63,20 +61,19 @@ object MaxPairwiseProduct {
     secondGreatest * currentMax
   }
 
-
-    // Java shit that intelliJ translated
   def main(args: Array[String]) {
-    val scanner: MaxPairwiseProduct.FastScanner = new MaxPairwiseProduct.FastScanner(System.in)
-    val n: Int = scanner.nextInt
-    val numbers: Array[Int] = Array[Int](n)
-    {
-      var i: Int = 0
-      while (i < n) {
-          numbers(i) = scanner.nextInt
-          i += 1
-          i - 1
-      }
+    val scanner = new FastScanner(System.in)
+    val n = scanner.nextInt
+
+    var numbers: Array[Int] = Array()
+    var i = 0
+    while ( i < n) {
+      val y = scanner.nextInt
+      numbers :+= y
+      i += 1
     }
+    numbers.foreach(System.out.println)
+
     System.out.println(getMaxPairwiseProduct2(numbers))
   }
 
