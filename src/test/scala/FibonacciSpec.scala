@@ -14,4 +14,9 @@ class FibonacciSpec  extends FlatSpec {
      assert(result == 0)
    }
 
+  it should "handle n of 2" in {
+    val result = Fibonacci.calcFib(2)
+    assert(result == 1)
+  }
+
 }
