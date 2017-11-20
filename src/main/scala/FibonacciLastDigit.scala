@@ -2,7 +2,7 @@
 import java.util._
 
 object FibonacciLastDigit {
-  def getFibonacciLastDigitNaive(n: Int): Long = {
+  def getFibLastDigit(n: Int): Long = {
     if (n <= 1) {
       n
     }
@@ -22,7 +22,7 @@ object FibonacciLastDigit {
   def main(args: Array[String]): Unit = {
     val s = new Scanner(System.in)
     val n = s.nextInt
-    println(getFibonacciLastDigitNaive(n))
+    println(getFibLastDigit(n))
   }
 
 }
