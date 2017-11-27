@@ -13,4 +13,8 @@ class ChangeSpec extends FlatSpec with Matchers {
     val result = Change.getChange(1051)
     result shouldBe 106
   }
+  it should "work when not all denoms are exercised" in {
+    val result = Change.getChange(1000)
+    result shouldBe 100
+  }
 }

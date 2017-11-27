@@ -5,21 +5,16 @@ import scala.annotation.tailrec
 object Change {
   def getChange(m: Int): Int = {
     val denominations = List(10,5,1)
-@tailrec
+    @tailrec
     def loop(denominationList: List[Int], currentRemainder: Int, currentCount: Int ): Int = {
       denominationList match {
         case Nil => currentCount
         case currentDenomination :: tail =>
-          if (currentRemainder == 0) currentCount
-          else {
-            val newCount = currentRemainder / currentDenomination
-            val newRemainder = currentRemainder % currentDenomination
-            loop(tail, newRemainder, currentCount + newCount)
-          }
+          val newCount = currentRemainder / currentDenomination
+          val newRemainder = currentRemainder % currentDenomination
+          loop(tail, newRemainder, currentCount + newCount)
       }
     }
-
-
 
     loop(denominations, m, 0)
   }
