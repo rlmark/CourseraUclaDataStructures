@@ -50,15 +50,29 @@ object FibonacciHuge {
   }
 
   // can find the period by using only remainders
-//  def findPeriod2(mod: Long): Int = {
-//    var i = 2 // because period starts with 0 1
-//    var notFound = true
-//
-//  }
+  def findPeriod(mod: Long): Long = {
+    var i = 2 // because period starts with 0 1
+    var notFound = true
+    var left = 0L
+    var right = 1L
+    while(notFound){
+      val tmp = left
+      left = right
+      right = (tmp + right) % mod
+      if (left == 0 && right == 1){
+        notFound = false
+      }
+      i += 1
+    }
+    val length = i - 2
+    println("length of Pisano period = " length)
+    length
+
+  }
 
   def getFibHuge(n: Long, mod: Long): Long = {
     // Find the period of the modulo level
-    val period = findPeriodNaive(mod)
+    val period = findPeriod(mod)
 
     // Take n and mod by the length of the period
     val remainder = n % period
