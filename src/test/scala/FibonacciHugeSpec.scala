@@ -14,8 +14,8 @@ class FibonacciHugeSpec extends FlatSpec {
     assert(result == 0)
   }
   it should "test" in {
-    for(i <- 0 to 25){
-      print(FibonacciHuge.getFibHugeNaive(i, 5) + " ")
+    for(i <- 1 to 10){
+      print(FibonacciHuge.getFibHugeNaive(i, 21) + " ")
     }
   }
 }

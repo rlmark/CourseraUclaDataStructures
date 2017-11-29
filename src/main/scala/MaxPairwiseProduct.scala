@@ -21,7 +21,7 @@ object MaxPairwiseProduct {
 
   // with scala types
   def getMaxPairwiseProduct2(numbers: Array[Int]): Long = {
-    val numbersWithIndex = numbers.zipWithIndex
+    lazy val numbersWithIndex = numbers.zipWithIndex
 
     var currentMaxIndex: Long = -1
     var currentMax: Long = -1
@@ -61,18 +61,42 @@ object MaxPairwiseProduct {
     secondGreatest * currentMax
   }
 
+  def getMaxPariwiseProduct4(numbers: scala.collection.immutable.Vector[Int]): Long = {
+    var currentMax: Long = -1
+    var currentMaxIndex: Long = -1
+
+    var i = 0
+    while(i < numbers.length){
+      if (numbers(i) > currentMax) {
+        currentMax = numbers(i)
+        currentMaxIndex = i
+      }
+      i += 1
+    }
+
+    i = 0
+    var secondGreatest: Long = -1
+    while(i < numbers.length){
+      if(numbers(i) > secondGreatest && i != currentMaxIndex){
+        secondGreatest = numbers(i)
+      }
+      i += 1
+    }
+    secondGreatest * currentMax
+  }
+
   def main(args: Array[String]) {
-    val scanner = new FastScanner(System.in)
+    val scanner = new Scanner(System.in)
     val n = scanner.nextInt
 
-    var numbers: Array[Int] = Array()
+    var numbers: scala.collection.immutable.Vector[Int] = scala.collection.immutable.Vector()
     var i = 0
     while ( i < n) {
       val y = scanner.nextInt
       numbers :+= y
       i += 1
     }
-    System.out.println(getMaxPairwiseProduct2(numbers))
+    println(getMaxPariwiseProduct4(numbers))
   }
 
 

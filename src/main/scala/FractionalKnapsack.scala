@@ -8,11 +8,11 @@ object FractionalKnapsack {
     val sorted = tuples.sortWith(sortTuples)
 
     def loop(capacityLeft: Int, potentialLootLeft: Seq[(Int, Int)], currentLootValue: Double): Double = {
-//      if(capacityLeft == 0) currentLootValue
+//      if(capacityLeft == 0) currentLootValue // would having this check be faster?
 //      else {
         potentialLootLeft match {
           case (v, w)::tail =>
-            // if your remaining capacity is greater than the weight of loot available
+            // if your remaining capacity is greater than or equal to the weight of loot available
             if (capacityLeft >= w) {
               val newLootValue = v + currentLootValue // add the entire value of the loot to current val
               val newRemainingCapacity = capacityLeft - w // subtract the entire weight of the loot from the current capacity
@@ -39,13 +39,6 @@ object FractionalKnapsack {
     BigDecimal.valueOf(t1._1.toDouble / t1._2).setScale(10, BigDecimal.RoundingMode.HALF_UP) > BigDecimal.valueOf(t2._1.toDouble / t2._2).setScale(10, BigDecimal.RoundingMode.HALF_UP)
   }
 
-
-  def getOptimalValue2(capacity: Int, values: Seq[Int], weights: Seq[Int]): Double ={
-    for (i <- values.indices) {
-
-    }
-    ???
-  }
   def main(args: Array[String]): Unit = {
     val scanner = new Scanner(System.in)
     val n = scanner.nextInt()
