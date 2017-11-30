@@ -17,12 +17,12 @@ object FibonacciHuge {
     current % mod
   }
 
-  def calcFib(n: Long): Long = {
+  def calcFibMod(n: Long, mod: Long): Long = {
     def loop(l: Long, r: Long, levelTracker: Int): Long = {
       if (levelTracker >= n) {
         r
       }
-      else loop(r, l + r, levelTracker + 1)
+      else loop(r, (l + r) % mod, levelTracker + 1)
     }
 
     if (n == 0) 0
@@ -31,23 +31,23 @@ object FibonacciHuge {
     }
   }
 
-  def findPeriodNaive(mod: Long): Int = {
-    var i = 2 // because period starts with 0 1
-    var notFound = true
-
-    while(notFound) {
-      val currentLast = calcFib(i) % mod
-      val secondLast = calcFib(i - 1) % mod
-
-        if(secondLast == 0 && currentLast == 1){
-          notFound = false
-        }
-
-      i += 1
-    }
-
-  i - 2
-  }
+//  def findPeriodNaive(mod: Long): Int = {
+//    var i = 2 // because period starts with 0 1
+//    var notFound = true
+//
+//    while(notFound) {
+//      val currentLast = calcFibMod(i) % mod
+//      val secondLast = calcFibMod(i - 1) % mod
+//
+//        if(secondLast == 0 && currentLast == 1){
+//          notFound = false
+//        }
+//
+//      i += 1
+//    }
+//
+//  i - 2
+//  }
 
   // can find the period by using only remainders
   def findPeriod(mod: Long): Long = {
@@ -65,7 +65,6 @@ object FibonacciHuge {
       i += 1
     }
     val length = i - 2
-    println("length of Pisano period = " length)
     length
 
   }
@@ -73,18 +72,23 @@ object FibonacciHuge {
   def getFibHuge(n: Long, mod: Long): Long = {
     // Find the period of the modulo level
     val period = findPeriod(mod)
+//    println("Period is " + period)
 
     // Take n and mod by the length of the period
+//    println("nth step of fib is " + n)
     val remainder = n % period
+//    println("remainder is " + remainder)
 
     // Take the remainder of that and mod by original m
-    remainder % mod
+    calcFibMod(remainder, mod)
+//    println("answer is " + a )
+
   }
 
   def main(args: Array[String]): Unit = {
     val s = new Scanner(System.in)
     val a = s.nextLong
     val b = s.nextLong
-    println(getFibHugeNaive(a, b))
+    println(getFibHuge(a, b))
   }
 }
