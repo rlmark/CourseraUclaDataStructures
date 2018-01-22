@@ -13,6 +13,15 @@ object MajorityElement {
 
   }
 
+  def getMajorityElementNaive(a: Vector[Int], left: Int, right: Int): Int = {
+    val uniqueElements = a.toSet
+
+    uniqueElements.fold(-1){(acc, next) =>
+      if (a.count(elem => next == elem) > a.length/2) 1
+      else acc
+    }
+  }
+
   def main(args: Array[String]): Unit = {
     val scanner = new Scanner(System.in)
     val n = scanner.nextInt()
