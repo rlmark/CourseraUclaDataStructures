@@ -63,6 +63,14 @@ object MajorityElement {
     maybeMajority.fold(-1)(_ => 1)
   }
 
+  def getMajorityElementNonSort(as:Vector[Int]): Int = {
+    // for each element, put it as a key in map
+    // its value is set to 1 the first time,
+    // if you find a duplicate, increment count of key the,
+    // if the count is over as.length/2, break -1,
+    ???
+  }
+
   def main(args: Array[String]): Unit = {
     val scanner = new Scanner(System.in)
     val n = scanner.nextInt()
