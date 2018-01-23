@@ -1,6 +1,17 @@
 import java.util.Scanner
 
 object MajorityElement {
+  /*
+  * 1. Sort the elements (use quicksort)
+  *   a.) pick a pivot (start of list is fine)
+  *   PARTITION (use Dutch national flag algorithm) Goal is to separate list into 3 parts, less, equal to, greater than. // maybe choose median of sublist as pivot
+  *     i.) compare all subsequent elements to pivot
+  *     ii.) all elements less than the pivot are placed to the left of the pivot
+  *     iii.) all elements greater than the pivot are placed to the right of the pivot
+  *     iv.) elements equal to pivot are kept next to pivot
+  *   b.) recursively call the sort function twice, once for the left, and once for the right side of the remaining list
+  * 2. If the length of any one of the sorted sections is greater than the length/2 of the original list, -1 else 1
+  * */
   def getMajorityElement(a : Vector[Int], left: Int, right: Int): Int = {
     if (left == right) {
       return -1
@@ -13,13 +24,43 @@ object MajorityElement {
 
   }
 
-  def getMajorityElementNaive(a: Vector[Int], left: Int, right: Int): Int = {
-    val uniqueElements = a.toSet
-
-    uniqueElements.fold(-1){(acc, next) =>
-      if (a.count(elem => next == elem) > a.length/2) 1
-      else acc
+  // test if this even works. implement dutch flag algorithm
+  def partitionSimple(as: Vector[Int], left: Int, right: Int): Unit = {
+    var leftIndex = left + 1
+    var rightIndex = right
+    while (leftIndex < rightIndex) {
+      val pivot = as(left)
+        if(as(leftIndex) < pivot){
+          leftIndex += 1
+        }
+        if(as(leftIndex) > pivot){
+          if(as(rightIndex) > pivot) rightIndex -= 1
+          if(as(rightIndex) < pivot)
+            swap(leftIndex, rightIndex)
+        }
+      swap(left, leftIndex)
     }
+
+    def swap(leftI: Int, rightI: Int): Unit = {
+      val temp = as(leftI)
+      as(leftI) = as(rightI)
+      as(rightI) = temp
+    }
+  }
+
+  def getMajorityElementNaive(as: Vector[Int], left: Int, right: Int): Int = {
+    val uniqueElements = as.toSet
+
+//    uniqueElements.fold(-1){(acc, next) =>
+//      if (a.count(elem => next == elem) > a.length/2) 1
+//      else acc
+//    }
+    val halfwayMark = as.length / 2
+    val maybeMajority = uniqueElements.find { e =>
+      val duplicates = as.count(a => a == e)
+      duplicates > halfwayMark
+    }
+    maybeMajority.fold(-1)(_ => 1)
   }
 
   def main(args: Array[String]): Unit = {
