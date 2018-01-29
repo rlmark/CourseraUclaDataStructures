@@ -12,7 +12,9 @@ object MajorityElement {
   *   b.) recursively call the sort function twice, once for the left, and once for the right side of the remaining list
   * 2. If the length of any one of the sorted sections is greater than the length/2 of the original list, -1 else 1
   * */
-  def getMajorityElement(a : Vector[Int], left: Int, right: Int): Int = {
+
+  // TODO: Use Scala Array instead.
+  def getMajorityElement(a : Array[Int], left: Int, right: Int): Int = {
     if (left == right) {
       return -1
     }
@@ -25,7 +27,7 @@ object MajorityElement {
   }
 
   // test if this even works. implement dutch flag algorithm
-  def partitionSimple(as: Vector[Int], left: Int, right: Int): Unit = {
+  def partitionSimple(as: Array[Int], left: Int, right: Int): Unit = {
     var leftIndex = left + 1
     var rightIndex = right
     while (leftIndex < rightIndex) {
@@ -48,7 +50,7 @@ object MajorityElement {
     }
   }
 
-  def getMajorityElementNaive(as: Vector[Int], left: Int, right: Int): Int = {
+  def getMajorityElementNaive(as: Array[Int], left: Int, right: Int): Int = {
     val uniqueElements = as.toSet
 
 //    uniqueElements.fold(-1){(acc, next) =>
@@ -74,10 +76,10 @@ object MajorityElement {
   def main(args: Array[String]): Unit = {
     val scanner = new Scanner(System.in)
     val n = scanner.nextInt()
-    var a: Vector[Int] = Vector()
+    val a: Array[Int] = Array(n)
     var i = 0
     while (i < n){
-      a :+= scanner.nextInt()
+      a(i) = scanner.nextInt()
       i += 1
     }
 

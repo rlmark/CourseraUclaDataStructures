@@ -2,7 +2,7 @@ package graphics
 
 case class Color(red: Byte, green: Byte, blue: Byte)
 
-abstract class Figure {
+trait Figure {
   // Color
   val color: Color
 
@@ -22,9 +22,11 @@ abstract class Figure {
   // Note: ask Erica, why do I need an isSelected function and a setSelected function!???
   var isSelected: Boolean
 //  def isSelected(): Boolean
+  // note: the java way is to have isSelected and setSeleted as getters and setters of a private field
+  // part of the reason you might have a setSelected method is that you can validate your input instead of allowing peole to access the field.
 
   // Note: Think about maybe returning something here
-  def setSelected(boolean: Boolean): Unit
+//  def setSelected(boolean: Boolean): Unit
 }
 
 // The fields of the case class are critical for rendering, the methods are for interacting with the object
@@ -44,7 +46,4 @@ case class Circle(color: Color, xAxis: Int, yAxis: Int, zAxis: Int, height: Int)
   // isSelected is set as true at time of class creation?
   override var isSelected: Boolean = true
 
-  override def setSelected(boolean: Boolean): Unit = {
-    if (!isSelected) isSelected = true
-  }
 }
