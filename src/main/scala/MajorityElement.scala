@@ -13,7 +13,6 @@ object MajorityElement {
   * 2. If the length of any one of the sorted sections is greater than the length/2 of the original list, -1 else 1
   * */
 
-  // TODO: Use Scala Array instead.
   def getMajorityElement(a : Array[Int], left: Int, right: Int): Int = {
     if (left == right) {
       return -1
@@ -26,21 +25,19 @@ object MajorityElement {
 
   }
 
-  // test if this even works. implement dutch flag algorithm
   def partitionSimple(as: Array[Int], left: Int, right: Int): Unit = {
-    var leftIndex = left + 1
-    var rightIndex = right
-    while (leftIndex < rightIndex) {
-      val pivot = as(left)
-        if(as(leftIndex) < pivot){
-          leftIndex += 1
-        }
-        if(as(leftIndex) > pivot){
-          if(as(rightIndex) > pivot) rightIndex -= 1
-          if(as(rightIndex) < pivot)
-            swap(leftIndex, rightIndex)
-        }
-      swap(left, leftIndex)
+    if(as.isEmpty) return Unit
+
+    val pivot = as(left) // pivot is leftmost element
+    var currentSplit = left
+    var next = currentSplit + 1// careful of index out of bounds errors here?
+
+    while (next <= right) {
+      if (as(next) <= pivot){ // if the next element is less than the pivot swap with split point
+        swap(currentSplit, next)
+        currentSplit = next
+        next += 1
+      } else next += 1
     }
 
     def swap(leftI: Int, rightI: Int): Unit = {
