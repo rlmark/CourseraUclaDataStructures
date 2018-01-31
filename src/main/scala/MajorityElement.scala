@@ -57,20 +57,24 @@ object MajorityElement {
 
     while (next <= right) {
       if (as(next) < pivot){ // if the next element is less than the pivot swap with left split point
-        swap(leftSplit, next)
-        rightSplit = next
+        val temp = as(leftSplit)
+        as(leftSplit) = as(next)
+        as(next) = as(rightSplit + 1)
+        as(rightSplit + 1) = temp
+        rightSplit += 1
         leftSplit += 1
         next += 1
       }
-      if (as(next) == pivot){ // if the next element is equal to pivot
+      else if (as(next) == pivot){ // if the next element is equal to pivot
         // swap the next with the left most pivot
-        swap(next, leftSplit)
-        // current rightSplit is equal to next
-        rightSplit = next
+        swap(next, rightSplit + 1 )
+        // current rightSplit is incremented
+        rightSplit += 1
         // increment next
         next += 1
-      }
-      else next += 1;
+      } else // the element is greater than the pivot
+        next += 1
+
     }
 
     def swap(leftI: Int, rightI: Int): Unit = {

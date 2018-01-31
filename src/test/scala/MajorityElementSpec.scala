@@ -47,7 +47,7 @@ class MajorityElementSpec extends FlatSpec with Matchers {
 
   "fat partition" should "partition elements into less than pivot, pivot group, and greater than pivot" in {
     val array = Array(4,4,4,1,2,7,9)
-    MajorityElement.partitionSimple(array, 0, array.length - 1)
+    MajorityElement.fatPartition(array, 0, array.length - 1)
     array should contain theSameElementsInOrderAs Array(1,2,4,4,4,7,9)
   }
 }
